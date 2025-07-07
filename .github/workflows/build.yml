@@ -43,34 +43,34 @@ jobs:
     strategy:
       matrix:
         include:
-#          - name: Assistants
-#            test: "*.TestAssistants"
+          - name: Assistants
+            test: "*.TestAssistants"
           - name: Audio
             test: "*.TestAudio"
-#          - name: Chat Completions
-#            test: "*.TestChat*"
-#          - name: Embeddings
-#            test: "*.TestEmbeddings"
-#          - name: Files
-#            test: "*.TestFiles"
+          - name: Chat Completions
+            test: "*.TestChat*"
+          - name: Embeddings
+            test: "*.TestEmbeddings"
+          - name: Files
+            test: "*.TestFiles"
 #          - name: Fine-tuning
 #            test: "*.TestFineTuning"
 #          - name: Images
 #            test: "*.TestImages"
-#          - name: Messages
-#            test: "*.TestMessages"
-#          - name: Models
-#            test: "*.TestModels"
-#          - name: Moderations
-#            test: "*.TestModerations"
-#          - name: Runs
-#            test: "*.TestRuns"
-#          - name: Threads
-#            test: "*.TestThreads"
+          - name: Messages
+            test: "*.TestMessages"
+          - name: Models
+            test: "*.TestModels"
+          - name: Moderations
+            test: "*.TestModerations"
+          - name: Runs
+            test: "*.TestRuns"
+          - name: Threads
+            test: "*.TestThreads"
 #          - name: Vector Stores
 #            test: "*.TestVectorStores"
-#          - name: Misc.
-#            test: "*.misc.*"
+          - name: Misc.
+            test: "*.misc.*"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
