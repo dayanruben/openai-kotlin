@@ -43,4 +43,4 @@ kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", vers
 kotlinx-binary-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.18.0" }
 maven-publish = { id = "com.vanniktech.maven.publish", version = "0.33.0" }
 spotless = { id = "com.diffplug.gradle.spotless", version = "7.0.4" }
-dokka = { id = "org.jetbrains.dokka", version = "1.9.20" }
+dokka = { id = "org.jetbrains.dokka", version = "2.0.0" }

@@ -6,7 +6,7 @@ plugins {
     id("com.vanniktech.maven.publish")
     id("binary-compatibility-validator")
     id("com.diffplug.spotless")
-    id("org.jetbrains.dokka")
+    id("org.jetbrains.dokka") version "2.0.0"
     id("build-support")
 }
 
