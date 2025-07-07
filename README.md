@@ -1,11 +1,14 @@
 # OpenAI API client for Kotlin
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.aallam.openai/openai-client?color=blue&label=Download)](https://central.sonatype.com/namespace/com.aallam.openai)
-[![License](https://img.shields.io/github/license/Aallam/openai-kotlin?color=yellow)](LICENSE.md)
+[![Maven Central](https://img.shields.io/maven-central/v/com.dayanruben/openai-client?color=blue&label=Download)](https://central.sonatype.com/namespace/com.dayanruben)
+[![License](https://img.shields.io/github/license/dayanruben/openai-kotlin?color=yellow)](LICENSE.md)
 [![Documentation](https://img.shields.io/badge/docs-api-a97bff.svg?logo=kotlin)](https://mouaad.aallam.com/openai-kotlin/)
 
 Kotlin client for [OpenAI's API](https://beta.openai.com/docs/api-reference) with multiplatform and coroutines
 capabilities.
+
+> [!WARNING]
+> Special thanks to the original [author](https://github.com/aallam) for laying the foundation of this [repository](https://github.com/aallam/openai-kotlin), your work continues to inspire.
 
 ## 📦 Setup
 
@@ -17,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.aallam.openai:openai-client:4.0.1"
+    implementation "com.dayanruben:openai-client:4.0.1"
 }
 ```
 
@@ -30,10 +33,10 @@ Alternatively, you can use [openai-client-bom](/openai-client-bom)  by adding th
 ```groovy
 dependencies {
     // import Kotlin API client BOM
-    implementation platform('com.aallam.openai:openai-client-bom:4.0.1')
+    implementation platform('com.dayanruben:openai-client-bom:4.0.1')
 
     // define dependencies without versions
-    implementation 'com.aallam.openai:openai-client'
+    implementation 'com.dayanruben:openai-client'
     runtimeOnly 'io.ktor:ktor-client-okhttp'
 }
 ```
@@ -55,7 +58,7 @@ of [Ktor's engines](https://ktor.io/docs/http-client-engines.html).
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.aallam.openai</groupId>
+        <groupId>com.dayanruben</groupId>
         <artifactId>openai-client-jvm</artifactId>
         <version>3.8.0</version>
     </dependency>
@@ -147,7 +150,7 @@ The specific rules are [already bundled](openai-core/src/jvmMain/resources/META-
 
 ## 📸 Snapshots
 
-[![Snapshot](https://img.shields.io/badge/dynamic/xml?url=https://oss.sonatype.org/service/local/repositories/snapshots/content/com/aallam/openai/openai-client/maven-metadata.xml&label=snapshot&color=red&query=.//versioning/latest)](https://oss.sonatype.org/content/repositories/snapshots/com/aallam/openai/openai-client/)
+[![Snapshot](https://img.shields.io/badge/dynamic/xml?url=https://oss.sonatype.org/service/local/repositories/snapshots/content/com/dayanruben/openai-client/maven-metadata.xml&label=snapshot&color=red&query=.//versioning/latest)](https://oss.sonatype.org/content/repositories/snapshots/com/dayanruben/openai-client/)
 
 <details>
  <summary>Learn how to import snapshot version</summary>
