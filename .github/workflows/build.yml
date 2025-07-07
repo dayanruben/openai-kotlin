@@ -121,5 +121,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
           branch: gh-pages
-          folder: docs
+          folder: build/dokka/html
           single-commit: true
