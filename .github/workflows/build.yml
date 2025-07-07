@@ -115,7 +115,7 @@ jobs:
         uses: gradle/gradle-build-action@v3
 
       - name: Build docs
-        run: ./gradlew dokkaHtmlMultiModule
+        run: ./gradlew dokkaGenerate
 
       - name: Deploy docs
         uses: JamesIves/github-pages-deploy-action@releases/v4
