@@ -56,7 +56,6 @@ fun KotlinMultiplatformExtension.jsNode() {
             kotlinOptions {
                 moduleKind = "umd"
                 sourceMap = true
-                metaInfo = true
             }
         }
         nodejs()
