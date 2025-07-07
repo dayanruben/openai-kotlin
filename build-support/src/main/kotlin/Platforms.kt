@@ -1,8 +1,8 @@
 import org.gradle.kotlin.dsl.creating
 import org.gradle.kotlin.dsl.getValue
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.konan.target.HostManager
-import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 
 fun KotlinMultiplatformExtension.native() {
     sourceSets.apply {
