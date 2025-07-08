@@ -2,7 +2,7 @@
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.dayanruben/openai-client?color=blue&label=Download)](https://central.sonatype.com/namespace/com.dayanruben)
 [![License](https://img.shields.io/github/license/dayanruben/openai-kotlin?color=yellow)](LICENSE.md)
-[![Documentation](https://img.shields.io/badge/docs-api-a97bff.svg?logo=kotlin)](https://mouaad.aallam.com/openai-kotlin/)
+[![Documentation](https://img.shields.io/badge/docs-api-a97bff.svg?logo=kotlin)](https://dayanruben.github.io/openai-kotlin/)
 
 Kotlin client for [OpenAI's API](https://beta.openai.com/docs/api-reference) with multiplatform and coroutines
 capabilities.
