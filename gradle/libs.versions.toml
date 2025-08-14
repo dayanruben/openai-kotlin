@@ -4,7 +4,13 @@ coroutines = "1.10.2"
 serialization = "1.9.0"
 ktor = "3.2.2"
 kotlin-io = "0.8.0"
+kotlinx-binary-validator = "0.18.0"
 logback = "1.5.18"
+ulid = "1.2.1"
+ktoken = "0.4.0"
+maven-publish = "0.33.0"
+spotless = "7.0.4"
+dokka = "2.0.0"
 
 [libraries]
 # Coroutines
@@ -34,13 +40,13 @@ kotlinx-io-bytestring = { group = "org.jetbrains.kotlinx", name = "kotlinx-io-by
 # Logback
 logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
 # ulid
-ulid = { group = "com.aallam.ulid", name = "ulid-kotlin", version = "1.2.1" }
-ktoken = { group = "com.aallam.ktoken", name = "ktoken", version = "0.4.0" }
+ulid = { group = "com.aallam.ulid", name = "ulid-kotlin", version.ref = "ulid" }
+ktoken = { group = "com.aallam.ktoken", name = "ktoken", version.ref = "ktoken" }
 
 [plugins]
 kotlin-multiplaform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-kotlinx-binary-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.18.0" }
-maven-publish = { id = "com.vanniktech.maven.publish", version = "0.33.0" }
-spotless = { id = "com.diffplug.spotless", version = "7.0.4" }
-dokka = { id = "org.jetbrains.dokka", version = "2.0.0" }
+kotlinx-binary-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "kotlinx-binary-validator" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
