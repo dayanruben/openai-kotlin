@@ -1,5 +1,7 @@
 # OpenAI API client for Kotlin
 
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.2.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Gradle](https://img.shields.io/badge/Gradle-9.0.0-blue?logo=gradle)](https://gradle.org)
 [![Maven Central](https://img.shields.io/maven-central/v/com.dayanruben/openai-client?color=blue&label=Download)](https://central.sonatype.com/namespace/com.dayanruben)
 [![License](https://img.shields.io/github/license/dayanruben/openai-kotlin?color=yellow)](LICENSE.md)
 [![Documentation](https://img.shields.io/badge/docs-api-a97bff.svg?logo=kotlin)](https://dayanruben.github.io/openai-kotlin/)
