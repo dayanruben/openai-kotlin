@@ -1,14 +1,15 @@
 name: Publish
 
 on:
-  workflow_dispatch:
+  release:
+    types: [created]
 
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
 
 jobs:
   publish:
-    name: Publish to Sonatype
+    name: Publish to Maven Central
     runs-on: macos-latest
     steps:
       - name: Checkout

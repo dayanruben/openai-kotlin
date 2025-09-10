@@ -1,3 +1,21 @@
+## 4.0.10
+> Published 07 Jul 2025
+
+### Changed
+- Update various dependencies to their latest versions:
+Kotlin: 2.0.20 → 2.2.0
+Coroutines: 1.8.1 → 1.10.2
+Serialization: 1.7.3 → 1.9.0
+Ktor: 3.0.0 → 3.2.1
+Kotlin IO: 0.5.4 → 0.8.0 (renamed from "kotlinio" to "kotlin-io")
+Logback: 1.4.8 → 1.5.18
+ktoken: 0.3.0 → 0.4.0
+- Gradle plugins were updated:
+kotlinx-binary-validator: 0.14.0 → 0.18.0
+maven-publish: 0.25.3 → 0.33.0
+spotless: 6.25.0 → 7.0.4 (also renamed from "com.diffplug.gradle.spotless" to "com.diffplug.spotless")
+dokka: 1.9.20 → 2.0.0
+
 ## 4.0.1
 > Published 02 Feb 2025
 
