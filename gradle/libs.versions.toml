@@ -8,7 +8,7 @@ kotlinx-binary-validator = "0.18.1"
 logback = "1.5.18"
 ulid = "1.2.1"
 ktoken = "0.4.0"
-maven-publish = "0.33.0"
+maven-publish = "0.35.0"
 spotless = "7.0.4"
 dokka = "2.0.0"
 
