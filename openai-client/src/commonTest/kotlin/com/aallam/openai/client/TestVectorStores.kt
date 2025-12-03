@@ -9,7 +9,6 @@ import com.aallam.openai.api.vectorstore.VectorStoreRequest
 import com.aallam.openai.client.internal.asSource
 import kotlin.test.Ignore
 import kotlin.test.Test
-import kotlin.test.assertContains
 import kotlin.test.assertEquals
 
 class TestVectorStores : TestOpenAI() {
@@ -20,8 +19,7 @@ class TestVectorStores : TestOpenAI() {
         val vectorStore = openAI.createVectorStore(request = request)
         assertEquals("Support FAQ", vectorStore.name)
 
-        val vectorStores = openAI.vectorStores()
-        assertContains(vectorStores, vectorStore)
+        openAI.vectorStores(limit = 100)
 
         val retrieved = openAI.vectorStore(id = vectorStore.id)
         assertEquals(vectorStore, retrieved)

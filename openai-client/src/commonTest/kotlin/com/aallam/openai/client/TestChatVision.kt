@@ -2,9 +2,17 @@ package com.aallam.openai.client
 
 import com.aallam.openai.api.chat.*
 import com.aallam.openai.api.model.ModelId
+import com.aallam.openai.client.internal.TestFileSystem
+import com.aallam.openai.client.internal.testFilePath
+import kotlinx.io.buffered
+import kotlinx.io.readByteArray
+import kotlin.io.encoding.Base64
+import kotlin.io.encoding.ExperimentalEncodingApi
 import kotlin.test.*
 
 class TestChatVision : TestOpenAI() {
+
+    private val sampleImageDataUrl by lazy { loadSampleImageDataUrl() }
 
     @Test
     fun textimage() = test {
@@ -14,7 +22,7 @@ class TestChatVision : TestOpenAI() {
                 user {
                     content {
                         text("What’s in this image?")
-                        image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg")
+                        image(sampleImageDataUrl)
                     }
                 }
             }
@@ -33,8 +41,8 @@ class TestChatVision : TestOpenAI() {
                 user {
                     content {
                         text("What are in these images? Is there any difference between them?")
-                        image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg")
-                        image("https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg")
+                        image(sampleImageDataUrl)
+                        image(sampleImageDataUrl)
                     }
                 }
             }
@@ -43,5 +51,14 @@ class TestChatVision : TestOpenAI() {
         val response = openAI.chatCompletion(request)
         val content = response.choices.first().message.content.orEmpty()
         assertNotNull(content)
+    }
+
+    @OptIn(ExperimentalEncodingApi::class)
+    private fun loadSampleImageDataUrl(): String {
+        val bytes = TestFileSystem.source(testFilePath("image/pets.png"))
+            .buffered()
+            .readByteArray()
+        val base64 = Base64.Default.encode(bytes)
+        return "data:image/png;base64,$base64"
     }
 }
