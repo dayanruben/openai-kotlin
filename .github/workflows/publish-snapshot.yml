@@ -8,6 +8,7 @@ on:
 
 jobs:
   check-version:
+    if: ${{ github.repository == 'aallam/openai-kotlin' }}
     runs-on: ubuntu-latest
     outputs:
       is_snapshot: ${{ steps.check_snapshot.outputs.is_snapshot }}
@@ -28,7 +29,7 @@ jobs:
     name: Publish to Snapshot
     runs-on: macos-latest
     needs: check-version
-    if: ${{ needs.check-version.outputs.is_snapshot == 'true' }}
+    if: ${{ github.repository == 'aallam/openai-kotlin' && needs.check-version.outputs.is_snapshot == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

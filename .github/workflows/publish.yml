@@ -9,6 +9,7 @@ env:
 jobs:
   publish:
     name: Publish to Sonatype
+    if: ${{ github.repository == 'aallam/openai-kotlin' }}
     runs-on: macos-latest
     steps:
       - name: Checkout
