@@ -8,7 +8,6 @@ env:
 
 jobs:
   publish:
-    if: github.repository == 'aallam/openai-kotlin'
     name: Publish to Sonatype
     if: ${{ github.repository == 'aallam/openai-kotlin' }}
     runs-on: macos-latest
