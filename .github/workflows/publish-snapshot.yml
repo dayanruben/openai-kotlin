@@ -26,6 +26,7 @@ jobs:
           fi
 
   publish:
+    if: github.repository == 'aallam/openai-kotlin'
     name: Publish to Snapshot
     runs-on: macos-latest
     needs: check-version

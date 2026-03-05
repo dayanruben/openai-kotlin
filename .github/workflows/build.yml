@@ -101,6 +101,7 @@ jobs:
           ./gradlew :openai-client:jvmTest
 
   publish-docs:
+    if: github.repository == 'aallam/openai-kotlin'
     runs-on: ubuntu-latest
     needs: [ offline-checks, live-full-jvm ]
     if: ${{ github.repository == 'aallam/openai-kotlin' && github.ref == 'refs/heads/main' && (needs['live-full-jvm'].result == 'success' || needs['live-full-jvm'].result == 'skipped') }}
