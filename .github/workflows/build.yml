@@ -4,7 +4,6 @@ on:
   push:
     branches: [ main, develop ]
   pull_request:
-    branches: [ main, develop ]
 
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false"
@@ -65,6 +64,7 @@ jobs:
           :openai-core:apiCheck
           :openai-client:apiCheck
           :openai-client:compileTestKotlinJvm
+          :openai-client:offlineJvmTest
           :openai-client:compileTestKotlinJs
           :openai-client:compileTestKotlinWasmJs
 
@@ -99,6 +99,10 @@ jobs:
             exit 0
           fi
           ./gradlew :openai-client:jvmTest
+
+      - name: Summarize live usage
+        if: always()
+        run: python3 .github/scripts/live-usage-summary.py
 
   publish-docs:
     runs-on: ubuntu-latest

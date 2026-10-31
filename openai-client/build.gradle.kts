@@ -41,6 +41,7 @@ kotlin {
                 api(libs.ktor.client.core)
                 implementation(libs.ktor.client.logging)
                 implementation(libs.ktor.client.auth)
+                implementation(libs.ktor.client.websockets)
                 implementation(libs.ktor.client.content.negotiation)
                 implementation(libs.ktor.client.serialization.json)
             }
@@ -57,6 +58,7 @@ kotlin {
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
+                implementation(libs.ktor.client.mock)
                 implementation(libs.ktor.client.okhttp)
                 implementation(libs.logback.classic)
             }
@@ -93,6 +95,18 @@ kotlin {
             }
         }
     }
+}
+
+// Run mocked HTTP fixtures without enabling the live integration suite.
+tasks.register<Test>("offlineJvmTest") {
+    group = "verification"
+    description = "Runs mocked client tests without OpenAI credentials."
+    val jvmTest = tasks.named<KotlinJvmTest>("jvmTest")
+    dependsOn("jvmTestClasses")
+    testClassesDirs = jvmTest.get().testClassesDirs
+    classpath = jvmTest.get().classpath
+    filter { includeTestsMatching("*.TestOffline*") }
+    environment("LIB_ROOT", rootDir)
 }
 
 val liveTestsEnabled = providers.environmentVariable("OPENAI_LIVE_TESTS")
