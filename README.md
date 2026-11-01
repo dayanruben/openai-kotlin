@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.aallam.openai:openai-client:4.1.0"
+    implementation "com.aallam.openai:openai-client:4.2.0"
 }
 ```
 
@@ -30,7 +30,7 @@ Alternatively, you can use [openai-client-bom](/openai-client-bom)  by adding th
 ```groovy
 dependencies {
     // import Kotlin API client BOM
-    implementation platform('com.aallam.openai:openai-client-bom:4.1.0')
+    implementation platform('com.aallam.openai:openai-client-bom:4.2.0')
 
     // define dependencies without versions
     implementation 'com.aallam.openai:openai-client'
@@ -57,7 +57,7 @@ of [Ktor's engines](https://ktor.io/docs/http-client-engines.html).
     <dependency>
         <groupId>com.aallam.openai</groupId>
         <artifactId>openai-client-jvm</artifactId>
-        <version>4.1.0</version>
+        <version>4.2.0</version>
     </dependency>
             
     <dependency>
@@ -106,6 +106,7 @@ Use your `OpenAI` instance to make API requests. [Learn more](guides/GettingStar
 ### Supported features
 
 - [Responses](guides/GettingStarted.md#responses)
+- [Decisions](guides/Decisions.md)
 - [Conversations](guides/Conversations.md)
 - [Models](guides/GettingStarted.md#models)
 - [Chat](guides/GettingStarted.md#chat)
@@ -120,6 +121,16 @@ Use your `OpenAI` instance to make API requests. [Learn more](guides/GettingStar
 - [Batch](guides/GettingStarted.md#batch)
 - [Vector Stores](guides/GettingStarted.md#vector-stores)
 - [Webhooks](guides/Webhooks.md)
+- [Organization usage and costs](guides/Administration.md)
+- [OrganizationAdministration](guides/OrganizationAdministration.md)
+- [Organization governance](guides/OrganizationGovernance.md)
+- [Containers](guides/Containers.md)
+- [Skills](guides/Skills.md)
+- [Voice management](guides/VoiceManagement.md)
+- [Live](guides/Live.md)
+- [Spend controls](guides/SpendControls.md)
+- [Safety and content provenance](guides/SafetyAndProvenance.md)
+- [Fine-tuning operations](guides/FineTuningOperations.md)
 
 #### Retired upstream APIs
 
@@ -187,6 +198,8 @@ For common issues and their solutions, check the [Troubleshooting Guide](TROUBLE
 
 - Default (non-billable): live tests are disabled.
 - Opt-in live tests: set `OPENAI_LIVE_TESTS=1` and `OPENAI_API_KEY`.
+
+The JVM live suite excludes mocked offline fixtures. CI runs those once in Offline Checks, then runs the live suite plus the separate Live and Content Provenance tasks. Containers live tests remain opt-in for eligible projects.
 
 Examples:
 

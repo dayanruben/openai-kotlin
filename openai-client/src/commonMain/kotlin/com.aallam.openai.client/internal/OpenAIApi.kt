@@ -34,4 +34,11 @@ internal class OpenAIApi(
     Uploads by UploadsApi(requester),
     Webhooks by WebhooksApi(requester),
     Realtime by RealtimeApi(requester),
+    Decisions by DecisionsApi(requester),
+    Containers by ContainersApi(requester),
+    Skills by SkillsApi(requester),
+    VoiceManagement by VoiceManagementApi(requester),
+    Live by LiveApi(requester),
+    Safety by SafetyApi(requester),
+    ContentProvenance by ContentProvenanceApi(requester),
     AutoCloseable by requester
